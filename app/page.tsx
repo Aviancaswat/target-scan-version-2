@@ -13,7 +13,7 @@ import UseSection from "./components/use";
 export default function HomePage() {
     return (
         <div className="min-h-screen relative overflow-hidden bg-background">
-            <section className="relative w-full h-screen overflow-hidden flex items-start pt-20 md:pt-10">
+            <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-between pt-20 md:pt-10 pb-8">
                 <div className="absolute inset-0 -z-10">
                     <div
                         className="absolute inset-0"
@@ -27,14 +27,14 @@ export default function HomePage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10 max-w-6xl mx-auto px-4">
-                    <div className="space-y-2">
+                    <div className="space-y-10 lg:space-y-3">
                         <div className="flex justify-center lg:justify-start">
                             <Badge variant="outline" className={cn("px-4 py-4 text-sm backdrop-blur-sm w-fit")}>
                                 <Badge className="mr-1">Nueva versión 🎉</Badge> Por Avianca Evolutivos
                             </Badge>
                         </div>
                         <TextAnimate
-                            className={cn("text-5xl lg:text-6xl font-bold leading-tight text-center lg:text-left")}
+                            className={cn("text-4xl lg:text-6xl font-bold leading-tight text-center lg:text-left")}
                             as="h1"
                             animation="blurInUp"
                             duration={1}

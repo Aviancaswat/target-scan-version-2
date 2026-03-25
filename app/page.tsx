@@ -1,9 +1,14 @@
+'use client'
+
 import { Button } from "@/components/animate-ui/components/buttons/button";
 import AnalysisAnimation3D from "@/components/custom-animations/AnalysisAnimation3D";
 import { Badge } from "@/components/ui/badge";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { toast } from "sonner";
+import FeaturesSection from "./components/features";
+import UseSection from "./components/use";
 
 export default function HomePage() {
     return (
@@ -53,6 +58,14 @@ export default function HomePage() {
                                 className={cn("cursor-pointer w-full lg:w-fit mt-1 flex items-center justify-center lg:justify-start")}
                                 variant={"default"}
                                 size="lg"
+                                onClick={() => toast("Esta funcionalidad se encuentra en desarrollo", {
+                                    description: "No sea avaricioso! Cálmese mi hermano",
+                                    position: "top-center",
+                                    action: {
+                                        label: "Entendido",
+                                        onClick: () => toast.dismiss()
+                                    }
+                                })}
                             >
                                 Comenzar análisis
                                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -67,6 +80,12 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section id="features">
+                <FeaturesSection />
+            </section>
+            <section id="how-it-works">
+                <UseSection />
             </section>
         </div>
     );

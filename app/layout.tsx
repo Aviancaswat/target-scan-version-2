@@ -1,4 +1,6 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -26,8 +28,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         <TooltipProvider>
-          {children}
+          <main className="flex-1">{children}</main>
+          <Toaster />
         </TooltipProvider>
+        <Footer />
       </body>
     </html>
   );

@@ -37,7 +37,6 @@ export default function AnalysisAnimation3D() {
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Initialize particles
         const particleCount = 60;
         const particles: Particle[] = [];
         
@@ -55,14 +54,11 @@ export default function AnalysisAnimation3D() {
         }
         particlesRef.current = particles;
 
-        // Animation loop
         let animationId: number;
         const animate = () => {
-            // Clear canvas
             ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Update rotation
             rotationRef.current.y += 0.001;
             rotationRef.current.x += 0.0003;
 
@@ -70,21 +66,17 @@ export default function AnalysisAnimation3D() {
             const centerY = canvas.height / 2;
             const scale = Math.min(canvas.width, canvas.height) / 2;
 
-            // 3D projection function
             const project3D = (x: number, y: number, z: number) => {
-                // Rotate around Y axis
                 const cosY = Math.cos(rotationRef.current.y);
                 const sinY = Math.sin(rotationRef.current.y);
                 let rotX = x * cosY - z * sinY;
                 let rotZ = x * sinY + z * cosY;
 
-                // Rotate around X axis
                 const cosX = Math.cos(rotationRef.current.x);
                 const sinX = Math.sin(rotationRef.current.x);
                 let rotY = y * cosX - rotZ * sinX;
                 let z2 = y * sinX + rotZ * cosX;
 
-                // Perspective
                 const perspective = 600;
                 const scale2 = perspective / (perspective + z2);
 
@@ -96,7 +88,6 @@ export default function AnalysisAnimation3D() {
                 };
             };
 
-            // Draw particles
             const projectedParticles: (Particle & { px: number; py: number; dist: number })[] = [];
 
             particles.forEach((p) => {
@@ -104,7 +95,6 @@ export default function AnalysisAnimation3D() {
                 p.y += p.vy;
                 p.z += p.vz;
 
-                // Bounce off boundaries
                 if (Math.abs(p.x) > 250) p.vx *= -1;
                 if (Math.abs(p.y) > 250) p.vy *= -1;
                 if (Math.abs(p.z) > 250) p.vz *= -1;
@@ -118,10 +108,8 @@ export default function AnalysisAnimation3D() {
                 });
             });
 
-            // Sort by depth
             projectedParticles.sort((a, b) => a.dist - b.dist);
 
-            // Draw connections
             ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
             ctx.lineWidth = 1;
             
@@ -140,7 +128,6 @@ export default function AnalysisAnimation3D() {
                 });
             });
 
-            // Draw particles
             projectedParticles.forEach((p) => {
                 const scale2 = (p.dist + 250) / 500;//Normalize scale
                 ctx.fillStyle = `rgba(59, 130, 246, ${p.opacity * scale2})`;
@@ -170,7 +157,7 @@ export default function AnalysisAnimation3D() {
             <canvas
                 ref={canvasRef}
                 className="w-full h-full block"
-                style={{ background: 'transparent' }}
+                style={{ background: '#fff' }}
             />
         </motion.div>
     );

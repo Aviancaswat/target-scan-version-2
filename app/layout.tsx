@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -23,6 +24,7 @@ export default function RootLayout({
       className={`${inter.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Header />
         <TooltipProvider>
           {children}
         </TooltipProvider>

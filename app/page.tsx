@@ -23,27 +23,23 @@ export default function HomePage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10 max-w-6xl mx-auto px-4">
                     <div className="space-y-2">
-                        <div className="flex justify-start">
+                        <div className="flex justify-center lg:justify-start">
                             <Badge variant="outline" className={cn("px-4 py-4 text-sm backdrop-blur-sm w-fit")}>
                                 <Badge className="mr-1">Nueva versión 🎉</Badge> Por Avianca Evolutivos
                             </Badge>
                         </div>
                         <TextAnimate
-                            className="text-5xl lg:text-6xl font-bold leading-tight"
+                            className={cn("text-5xl lg:text-6xl font-bold leading-tight text-center lg:text-left")}
                             as="h1"
                             animation="blurInUp"
                             duration={1}
-                            by="character"
+                            by="word"
                         >
                             Implementaciones de Adobe Target sin bugs
                         </TextAnimate>
-                        {/* <p className="text-xl text-muted-foreground max-w-lg">
-                            Valida tu código antes de producción. Detecta errores,
-                            inconsistencias y malas prácticas automáticamente.
-                        </p> */}
                         <TextAnimate
                             as="p"
-                            className="text-lg text-muted-foreground max-w-lg"
+                            className={cn("text-lg text-muted-foreground max-w-lg text-center lg:text-left mx-auto lg:mx-0")}
                             animation="slideDown"
                             duration={1}
                             delay={0.7}
@@ -52,14 +48,17 @@ export default function HomePage() {
                             Valida tu código antes de producción. Detecta errores,
                             inconsistencias y malas prácticas automáticamente.
                         </TextAnimate>
-                        <Button
-                            className="cursor-pointer w-fit mt-1"
-                            variant={"default"}
-                            size="lg"
-                        >
-                            Comenzar análisis
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        <div className="flex justify-center lg:justify-start">
+                            <Button
+                                className={cn("cursor-pointer w-full lg:w-fit mt-1 flex items-center justify-center lg:justify-start")}
+                                variant={"default"}
+                                size="lg"
+                            >
+                                Comenzar análisis
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </div>
+
                     </div>
 
                     <div className="hidden lg:flex justify-center h-96">

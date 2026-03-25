@@ -27,7 +27,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10 max-w-6xl mx-auto px-4">
-                    <div className="space-y-10 lg:space-y-3">
+                    <div className="space-y-10 lg:space-y-5">
                         <div className="flex justify-center lg:justify-start">
                             <Badge variant="outline" className={cn("px-4 py-4 text-sm backdrop-blur-sm w-fit")}>
                                 <Badge className="mr-1">Nueva versión 🎉</Badge> Por Avianca Evolutivos

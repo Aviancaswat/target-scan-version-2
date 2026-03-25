@@ -59,7 +59,7 @@ export default function HomePage() {
                                 variant={"default"}
                                 size="lg"
                                 onClick={() => toast("Esta funcionalidad se encuentra en desarrollo", {
-                                    description: "No sea avaricioso! Cálmese mi hermano",
+                                    description: "No sea avaricioso! Cálmese mi herman@",
                                     position: "top-center",
                                     action: {
                                         label: "Entendido",

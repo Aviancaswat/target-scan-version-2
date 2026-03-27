@@ -26,7 +26,6 @@ export default function AnalysisAnimation3D() {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        // Set canvas size
         const parent = canvas.parentElement;
         const resizeCanvas = () => {
             if (parent) {
@@ -129,7 +128,7 @@ export default function AnalysisAnimation3D() {
             });
 
             projectedParticles.forEach((p) => {
-                const scale2 = (p.dist + 250) / 500;//Normalize scale
+                const scale2 = (p.dist + 250) / 500;
                 ctx.fillStyle = `rgba(59, 130, 246, ${p.opacity * scale2})`;
                 ctx.beginPath();
                 ctx.arc(p.px, p.py, p.size * scale2 + 1, 0, Math.PI * 2);

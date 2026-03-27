@@ -1,18 +1,17 @@
-
 'use client';
 
 import TargetScanLogo from "@/lib/custom-icons/target-scan-logo";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
-export default function Header(){
+export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <header className="w-full border-b border-muted bg-background sticky top-0 z-50">
             <div className="h-14 sm:h-16 flex items-center justify-between px-4 sm:px-6">
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                    <div className="text-primary flex-shrink-0">
+                    <div className="text-primary shrink-0">
                         <TargetScanLogo className="h-8 w-8 sm:h-10 sm:w-10" />
                     </div>
                     <div className="flex flex-col min-w-0">
@@ -30,7 +29,7 @@ export default function Header(){
                     </a>
                 </nav>
 
-                <button 
+                <button
                     className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                 >

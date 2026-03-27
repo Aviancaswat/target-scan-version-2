@@ -1,13 +1,11 @@
 'use client'
 
-import { Button } from "@/components/animate-ui/components/buttons/button";
 import AnalysisAnimation3D from "@/components/custom-animations/AnalysisAnimation3D";
 import { Badge } from "@/components/ui/badge";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import { toast } from "sonner";
 import FeaturesSection from "./components/features";
+import { Login } from "./components/login";
 import UseSection from "./components/use";
 
 export default function HomePage() {
@@ -37,8 +35,9 @@ export default function HomePage() {
                             className={cn("text-4xl lg:text-6xl font-bold leading-tight text-center lg:text-left")}
                             as="h1"
                             animation="blurInUp"
-                            duration={1}
-                            by="word"
+                            duration={0.8}
+                            by="character"
+                            once={true}
                         >
                             Implementaciones de Adobe Target sin bugs
                         </TextAnimate>
@@ -47,29 +46,15 @@ export default function HomePage() {
                             className={cn("text-lg text-muted-foreground max-w-lg text-center lg:text-left mx-auto lg:mx-0")}
                             animation="slideDown"
                             duration={1}
-                            delay={0.7}
+                            delay={0.9}
                             by="line"
+                            once={true}
                         >
                             Valida tu código antes de producción. Detecta errores,
                             inconsistencias y malas prácticas automáticamente.
                         </TextAnimate>
                         <div className="flex justify-center lg:justify-start">
-                            <Button
-                                className={cn("cursor-pointer w-full lg:w-fit mt-1 flex items-center justify-center lg:justify-start")}
-                                variant={"default"}
-                                size="lg"
-                                onClick={() => toast("Esta funcionalidad se encuentra en desarrollo", {
-                                    description: "No sea avaricioso! Cálmese mi herman@",
-                                    position: "top-center",
-                                    action: {
-                                        label: "Entendido",
-                                        onClick: () => toast.dismiss()
-                                    }
-                                })}
-                            >
-                                Comenzar análisis
-                                <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
+                            <Login from="bottom" showCloseButton={true} />
                         </div>
 
                     </div>

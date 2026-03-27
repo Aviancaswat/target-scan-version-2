@@ -2,6 +2,7 @@
 
 import TargetScanLogo from "@/lib/custom-icons/target-scan-logo";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
@@ -10,15 +11,17 @@ export default function Header() {
     return (
         <header className="w-full border-b border-muted bg-background sticky top-0 z-50">
             <div className="h-14 sm:h-16 flex items-center justify-between px-4 sm:px-6">
-                <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                    <div className="text-primary shrink-0">
-                        <TargetScanLogo className="h-8 w-8 sm:h-10 sm:w-10" />
+                <Link href={"/"}>
+                    <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                        <div className="text-primary shrink-0">
+                            <TargetScanLogo className="h-8 w-8 sm:h-10 sm:w-10" />
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                            <h1 className="text-sm sm:text-lg font-bold text-foreground truncate">Avianca Target Scan</h1>
+                            <p className="hidden sm:block text-xs text-muted-foreground truncate">Análisis Inteligente de Adobe Target</p>
+                        </div>
                     </div>
-                    <div className="flex flex-col min-w-0">
-                        <h1 className="text-sm sm:text-lg font-bold text-foreground truncate">Avianca Target Scan</h1>
-                        <p className="hidden sm:block text-xs text-muted-foreground truncate">Análisis Inteligente de Adobe Target</p>
-                    </div>
-                </div>
+                </Link>
 
                 <nav className="hidden md:flex items-center gap-6 ml-8">
                     <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

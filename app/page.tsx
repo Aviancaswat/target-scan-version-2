@@ -56,9 +56,7 @@ export default function HomePage() {
                         <div className="flex justify-center lg:justify-start">
                             <Login from="bottom" showCloseButton={true} />
                         </div>
-
                     </div>
-
                     <div className="hidden lg:flex justify-center h-96">
                         <div className="w-full h-full">
                             <AnalysisAnimation3D />
